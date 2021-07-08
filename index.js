@@ -13,15 +13,10 @@ app.post('/convert', (req, res) => {
     const { id } = req.params;
     const { fromCurrency, amount, toCurrency } = req.body;
 
-    console.log(`${baseURL}${accessToken}&base${fromCurrency}&symbols${toCurrency}`)
-
-    rates?.map(rates => {
-        
-    })
     axios.get(`${baseURL}${accessToken}&base=${fromCurrency}&symbols=${toCurrency}`)
     .then(res => {
         rates.push(res.data)
-        console.log(res.data)
+        // console.log(res.data)
     }) .catch (console.error);
 
     // {
